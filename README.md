@@ -26,12 +26,12 @@ tbeets/docker-kafka
 
 ```bash
 export KAFKA=`ifconfig | grep "inet " | grep -v 127.0.0.1 | cut -d\  -f2`:9092 
-kafka-console-producer.sh --broker-list $KAFKA --topic test
+kafka-console-producer --broker-list $KAFKA --topic test
 ```
 
 ```bash
 export ZOOKEEPER=`ifconfig | grep "inet " | grep -v 127.0.0.1 | cut -d\  -f2`:2181/kafka 
-kafka-console-consumer.sh --zookeeper $ZOOKEEPER --topic test
+kafka-console-consumer --zookeeper $ZOOKEEPER --topic test
 ```
 
 ## Container Build

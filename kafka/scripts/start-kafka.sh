@@ -11,7 +11,7 @@
 # Set the external host:port listener (Kafka 10.0+)
 if [ "$ADVERTISED_KAFKA_LISTENER" ]; then
     echo "advertised kafka listener: $ADVERTISED_KAFKA_LISTENER"
-    sed -r -i "s/^#\(advertised.host.name\)=\(PLAINTEXT:\/\/\)\(.*\)/\1=\2$ADVERTISED_KAFKA_LISTENER/g" $KAFKA_HOME/config/server.properties
+    sed -r -i "s/^#(advertised.listeners)=(PLAINTEXT:\/\/)(.*)/\1=\2$ADVERTISED_KAFKA_LISTENER/g" $KAFKA_HOME/config/server.properties
 fi
 
 # Set the zookeeper chroot
